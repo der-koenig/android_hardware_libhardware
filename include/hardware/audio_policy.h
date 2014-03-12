@@ -374,6 +374,13 @@ struct audio_policy_service_ops {
                             float volume,
                             int delay_ms);
 
+#ifdef QCOM_FM_ENABLED
+    /* set fm audio volume. */
+    int (*set_fm_volume)(void *service,
+                         float volume,
+                         int delay_ms);
+#endif
+
     /* move effect to the specified output */
     int (*move_effects)(void *service,
                         int session,
